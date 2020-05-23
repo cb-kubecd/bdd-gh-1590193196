@@ -1,0 +1,83 @@
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-2fmt9[0m
+{"level":"info","ts":1590193352.1556475,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590193352.1562243,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-9888p[0m
+{"level":"info","ts":1590193352.5744207,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1590193352.5760295,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-gh-1590193196-mas-ddx7s-srw4h[0m
+{"level":"info","ts":1590193435.7764542,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1590193436.8485048,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-gh-1590193196.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1590193196 main.go
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0523 00:24:07.321084      11 metadata.go:241] Failed to unmarshal scopes: json: cannot unmarshal string into Go value of type []string
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Built cross stage deps: map[]                
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Checking for cached layer gcr.io/jenkins-x-labs-bdd/cache:2c2dd53f3fe894d26418c7e116f235f2edc29265d441ba5b06df3b3bd717de1c... 
+[36mINFO[0m[0000] No cached layer found for cmd COPY ./bin/ /  
+[36mINFO[0m[0000] Unpacking rootfs as cmd COPY ./bin/ / requires it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] Resolving paths                              
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/bdd-gh-1590193196"]            
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Resolving paths                              
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0001] Pushing layer gcr.io/jenkins-x-labs-bdd/cache:2c2dd53f3fe894d26418c7e116f235f2edc29265d441ba5b06df3b3bd717de1c to cache now 
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-gh-1590193196 to an unshallow repository
+Generating change log from git ref 1a5205df901e2e9e79ebad6db00987b4fc0ccc0d => 1e70b4d2c308126eb759656225147ccccfd3914b
+Associating user x-0 in users.jenkins.io with email jenkins-x-*****@googlegroups.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 11bff6a3aadef7a8a1c66f39f5d0b280cf441a1f with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/bdd-gh-1590193196 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/bdd-gh-1590193196/releases/tag/v0.0.1
+generated: /workspace/source/charts/bdd-gh-1590193196/templates/release.yaml
+Created Release bdd-gh-1590193196-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-bdd-gh-1590193196-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-bdd-gh-1590193196-master-1 with release notes URL: https://github.com/cb-kubecd/bdd-gh-1590193196/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-gh-1590193196-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1590193196-mas-ddx7s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-gh-1590193196 version 0.0.1 to namespace **-staging
+WARNING: could not find upstream git URL failed to unmarshal  due to no GitConfDir defined
+pushed merged branch promote-bdd-gh-1590193196-0.0.1
+error: creating pull request with arguments Title: chore: bdd-gh-1590193196 to 0.0.1; Body: chore: Promote bdd-gh-1590193196 to version 0.0.1; Head: promote-bdd-gh-1590193196-0.0.1; Base: master; Labels: updatebot; Git Repo: https://api.github.com/repos/cb-kubecd/environment-pr-363-4-bdd-gke-staging: POST https://api.github.com/repos/cb-kubecd/environment-pr-363-4-bdd-gke-staging/pulls: 502 Server Error []
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
